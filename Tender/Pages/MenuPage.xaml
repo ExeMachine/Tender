@@ -5,10 +5,21 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Tender.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="1200"
       Title="MenuPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="23*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="#FF3A3F45">
+            <Image Source="/Tender;component/Resources/tender.png"/>
+            <Button   FontSize="24" Foreground="White" Content="ЗАЯВКИ" Height="80" Margin="0 120 0 0"   Background="#FF0078D7" FontWeight="Bold" BorderBrush="#FF3A3F45" BorderThickness="1"/>
+            <Button   FontSize="24" Foreground="White" Content="ТЕНДЕР" Height="80" Margin="-6,20,-6,0" Background="#FFC7C72C" FontWeight="Bold" BorderBrush="#FF3A3F45" BorderThickness="3"/>
+        </StackPanel>
+        <Grid Grid.Column="1" Background="#FFE4E2E3">
+
+        </Grid>
     </Grid>
 </Page>
