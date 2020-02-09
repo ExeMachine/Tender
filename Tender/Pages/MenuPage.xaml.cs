@@ -23,6 +23,13 @@ namespace Tender.Pages
         public MenuPage()
         {
             InitializeComponent();
+            nametx.Text = AuthPage.AuthUser.Name;
+            roletx.Text = AuthPage.AuthUser.Role.Name;
+        }
+
+        private void Closebtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AuthPage());
         }
     }
 }

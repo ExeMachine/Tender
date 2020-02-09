@@ -16,10 +16,22 @@
         <StackPanel Grid.Column="0" Background="#FF3A3F45">
             <Image Source="/Tender;component/Resources/tender.png"/>
             <Button   FontSize="24" Foreground="White" Content="ЗАЯВКИ" Height="80" Margin="0 120 0 0"   Background="#FF0078D7" FontWeight="Bold" BorderBrush="#FF3A3F45" BorderThickness="1"/>
-            <Button   FontSize="24" Foreground="White" Content="ТЕНДЕР" Height="80" Margin="-6,20,-6,0" Background="#FFC7C72C" FontWeight="Bold" BorderBrush="#FF3A3F45" BorderThickness="3"/>
+            <Button   FontSize="24" Foreground="White" Content="ТЕНДЕР" Height="80" Margin="-6,20,-6,0" Background="#FFC7C72C" FontWeight="Bold" BorderBrush="#FF3A3F45" BorderThickness="1"/>
         </StackPanel>
         <Grid Grid.Column="1" Background="#FFE4E2E3">
-
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="91*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"  BorderThickness="0,0,0,1" BorderBrush="#3a3d44">
+                <Grid>
+                    <TextBlock FontSize="20" Text="Имя:" Height="30" Width="60" Margin="30,20,830,21" />
+                    <TextBlock x:Name="nametx" Height="30" Width="350" FontSize="20" Text=""  Margin="82,20,778,21" />
+                    <TextBlock FontSize="20" Text="Роль:" Height="30" Width="60" Margin="472,20,388,21" />
+                    <TextBlock x:Name="roletx" FontSize="20" Height="30" Width="200" Text=""  Margin="553,20,267,21" />
+                    <Button x:Name="closebtn"  FontSize="24" Foreground="White" Content="выйти" Height="40" Width="100"   Background="#FF3A3F45" FontWeight="Bold" BorderBrush="#FF3A3F45" BorderThickness="1" HorizontalAlignment="Right" Margin="0 0 10 0" Click="Closebtn_Click"/>
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 </Page>
