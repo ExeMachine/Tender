@@ -12,7 +12,7 @@
     <Grid Background="#3a3f45">
         <Border BorderBrush="#3a3d44" Background="#e4e2e3"  Height="500" Width="400"  CornerRadius="7">
             <Grid>
-                <Image Source="/Tender;component/Resources/tender.png" Margin="0,-61,0,474" />
+                <Image Source="/Tender;component/Resources/1233.png" Margin="10,-82,0,495" />
                 <Border Height="40" Margin="0,0,0,450" BorderThickness="0,0,0,1" BorderBrush="#3a3d44">
                     <Grid>
                         <TextBlock Margin="51,7,-51,-7">

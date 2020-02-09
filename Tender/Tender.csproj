@@ -187,6 +187,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\1233.png" />
     <Resource Include="Resources\tender.png" />
   </ItemGroup>
   <ItemGroup>

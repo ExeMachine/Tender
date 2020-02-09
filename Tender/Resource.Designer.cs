@@ -63,6 +63,16 @@ namespace Tender {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1233 {
+            get {
+                object obj = ResourceManager.GetObject("_1233", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tender {
             get {
                 object obj = ResourceManager.GetObject("tender", resourceCulture);
