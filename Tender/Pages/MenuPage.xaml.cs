@@ -23,6 +23,7 @@ namespace Tender.Pages
         public MenuPage()
         {
             InitializeComponent();
+            Frame2.Navigate(new TenderPage());
             nametx.Text = AuthPage.AuthUser.Name;
             roletx.Text = AuthPage.AuthUser.Role.Name;
         }
@@ -30,6 +31,16 @@ namespace Tender.Pages
         private void Closebtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AuthPage());
+        }
+
+        private void Tenderbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame2.Navigate(new TenderPage());
+        }
+
+        private void Applicationbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame2.Navigate(new RequestPage());
         }
     }
 }

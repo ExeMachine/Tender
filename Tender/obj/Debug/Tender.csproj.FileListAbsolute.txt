@@ -28,3 +28,7 @@ C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Tender.csproj.CopyCompl
 C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\App.baml
 C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\MenuPage.g.cs
 C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\MenuPage.baml
+C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\TenderPage.g.cs
+C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\TenderPage.baml
+C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\RequestPage.g.cs
+C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\RequestPage.baml
