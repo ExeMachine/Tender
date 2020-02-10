@@ -25,7 +25,18 @@ namespace Tender.Pages
         public TenderPage()
         {
             InitializeComponent();
-            TenderList.ItemsSource = db.Tender.ToList();
+            TenderList.ItemsSource = db.Tenders.ToList();
+        }
+
+        private void AddRequest_Click(object sender, RoutedEventArgs e)
+        {
+            if (TenderList.SelectedItem != null)
+            {
+                var sel = TenderList.SelectedItem as Tenders;
+                NavigationService.Navigate(new ReqPage(sel));
+            }
+            else MessageBox.Show("Выберите тендер из списка", "Сообщение", MessageBoxButton.OK);
+            
         }
     }
 }

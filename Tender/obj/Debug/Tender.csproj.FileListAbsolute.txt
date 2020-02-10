@@ -32,3 +32,5 @@ C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\TenderPage.g.cs
 C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\TenderPage.baml
 C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\RequestPage.g.cs
 C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\RequestPage.baml
+C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\ReqPage.g.cs
+C:\Users\Ирина\source\repos\Tender\Tender\obj\Debug\Pages\ReqPage.baml

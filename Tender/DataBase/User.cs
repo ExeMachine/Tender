@@ -18,8 +18,8 @@ namespace Tender.DataBase
         public User()
         {
             this.Request = new HashSet<Request>();
-            this.Tender = new HashSet<Tender>();
-            this.Tender1 = new HashSet<Tender>();
+            this.Tenders = new HashSet<Tenders>();
+            this.Tenders1 = new HashSet<Tenders>();
         }
     
         public int Id { get; set; }
@@ -35,8 +35,8 @@ namespace Tender.DataBase
         public virtual ICollection<Request> Request { get; set; }
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tender> Tender { get; set; }
+        public virtual ICollection<Tenders> Tenders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tender> Tender1 { get; set; }
+        public virtual ICollection<Tenders> Tenders1 { get; set; }
     }
 }

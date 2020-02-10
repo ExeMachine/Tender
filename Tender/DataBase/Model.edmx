@@ -42,7 +42,7 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <EntityType Name="Tender">
+        <EntityType Name="Tenders">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -94,24 +94,24 @@
         </Association>
         <Association Name="FK_Tender_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="Tender" Type="Self.Tender" Multiplicity="*" />
+          <End Role="Tenders" Type="Self.Tenders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Tender">
+            <Dependent Role="Tenders">
               <PropertyRef Name="OrganizerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tender_User1">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Tender" Type="Self.Tender" Multiplicity="*" />
+          <End Role="Tenders" Type="Self.Tenders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Tender">
+            <Dependent Role="Tenders">
               <PropertyRef Name="WinnerId" />
             </Dependent>
           </ReferentialConstraint>
@@ -133,7 +133,7 @@
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tender" EntityType="Self.Tender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tenders" EntityType="Self.Tenders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Request_Status" Association="Self.FK_Request_Status">
             <End Role="Status" EntitySet="Status" />
@@ -145,11 +145,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_Tender_User" Association="Self.FK_Tender_User">
             <End Role="User" EntitySet="User" />
-            <End Role="Tender" EntitySet="Tender" />
+            <End Role="Tenders" EntitySet="Tenders" />
           </AssociationSet>
           <AssociationSet Name="FK_Tender_User1" Association="Self.FK_Tender_User1">
             <End Role="User" EntitySet="User" />
-            <End Role="Tender" EntitySet="Tender" />
+            <End Role="Tenders" EntitySet="Tenders" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
@@ -202,7 +202,7 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Tender">
+        <EntityType Name="Tenders">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -214,8 +214,8 @@
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="WinnerId" Type="Int32" />
           <Property Name="DateOfEnd" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Tender_User" FromRole="Tender" ToRole="User" />
-          <NavigationProperty Name="User1" Relationship="Self.FK_Tender_User1" FromRole="Tender" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Tender_User" FromRole="Tenders" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_Tender_User1" FromRole="Tenders" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -231,8 +231,8 @@
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Request" Relationship="Self.FK_Request_User" FromRole="User" ToRole="Request" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
-          <NavigationProperty Name="Tender" Relationship="Self.FK_Tender_User" FromRole="User" ToRole="Tender" />
-          <NavigationProperty Name="Tender1" Relationship="Self.FK_Tender_User1" FromRole="User" ToRole="Tender" />
+          <NavigationProperty Name="Tenders" Relationship="Self.FK_Tender_User" FromRole="User" ToRole="Tenders" />
+          <NavigationProperty Name="Tenders1" Relationship="Self.FK_Tender_User1" FromRole="User" ToRole="Tenders" />
         </EntityType>
         <Association Name="FK_Request_Status">
           <End Role="Status" Type="Self.Status" Multiplicity="1" />
@@ -272,24 +272,24 @@
         </Association>
         <Association Name="FK_Tender_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="Tender" Type="Self.Tender" Multiplicity="*" />
+          <End Role="Tenders" Type="Self.Tenders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Tender">
+            <Dependent Role="Tenders">
               <PropertyRef Name="OrganizerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tender_User1">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Tender" Type="Self.Tender" Multiplicity="*" />
+          <End Role="Tenders" Type="Self.Tenders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Tender">
+            <Dependent Role="Tenders">
               <PropertyRef Name="WinnerId" />
             </Dependent>
           </ReferentialConstraint>
@@ -299,7 +299,7 @@
           <EntitySet Name="Role" EntityType="Self.Role" />
           <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <EntitySet Name="Tender" EntityType="Self.Tender" />
+          <EntitySet Name="Tenders" EntityType="Self.Tenders" />
           <EntitySet Name="User" EntityType="Self.User" />
           <AssociationSet Name="FK_Request_Status" Association="Self.FK_Request_Status">
             <End Role="Status" EntitySet="Status" />
@@ -315,11 +315,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_Tender_User" Association="Self.FK_Tender_User">
             <End Role="User" EntitySet="User" />
-            <End Role="Tender" EntitySet="Tender" />
+            <End Role="Tenders" EntitySet="Tenders" />
           </AssociationSet>
           <AssociationSet Name="FK_Tender_User1" Association="Self.FK_Tender_User1">
             <End Role="User" EntitySet="User" />
-            <End Role="Tender" EntitySet="Tender" />
+            <End Role="Tenders" EntitySet="Tenders" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -369,9 +369,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tender">
-            <EntityTypeMapping TypeName="TenderDBModel.Tender">
-              <MappingFragment StoreEntitySet="Tender">
+          <EntitySetMapping Name="Tenders">
+            <EntityTypeMapping TypeName="TenderDBModel.Tenders">
+              <MappingFragment StoreEntitySet="Tenders">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OrganizerId" ColumnName="OrganizerId" />
                 <ScalarProperty Name="Price" ColumnName="Price" />

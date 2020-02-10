@@ -29,7 +29,7 @@ namespace Tender.DataBase
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Tender> Tender { get; set; }
+        public virtual DbSet<Tenders> Tenders { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

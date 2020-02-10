@@ -17,11 +17,11 @@
                     <GridViewColumn Header="Цена"  DisplayMemberBinding="{Binding Path=Price}" Width="150"/>
                     <GridViewColumn Header="Количество"  DisplayMemberBinding="{Binding Path=Count}" Width="150"/>
                     <GridViewColumn Header="Дата окончания"  DisplayMemberBinding="{Binding Path=DateOfEnd, StringFormat=dd-MM-yyyy}" Width="100"/>
-                    <GridViewColumn Header="Заявка" Width="150">
+                    <GridViewColumn Header="Заявки" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Margin="30 0 0 0 ">
-                                    <Hyperlink x:Name="AddRequest" NavigateUri="AuthPage.xaml">
+                                    <Hyperlink x:Name="AddRequest" Click="AddRequest_Click">
                                        Подать заявку
                                     </Hyperlink>
                                 </TextBlock>

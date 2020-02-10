@@ -42,9 +42,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tender">
-      <EntityTypeMapping TypeName="TenderDBModel.Tender">
-        <MappingFragment StoreEntitySet="Tender">
+    <EntitySetMapping Name="Tenders">
+      <EntityTypeMapping TypeName="TenderDBModel.Tenders">
+        <MappingFragment StoreEntitySet="Tenders">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="OrganizerId" ColumnName="OrganizerId" />
           <ScalarProperty Name="Price" ColumnName="Price" />

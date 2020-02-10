@@ -12,7 +12,7 @@ namespace Tender.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Tender
+    public partial class Tenders
     {
         public int Id { get; set; }
         public int OrganizerId { get; set; }
