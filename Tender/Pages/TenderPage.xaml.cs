@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tender.DataBase;
 
 namespace Tender.Pages
 {
@@ -20,9 +21,11 @@ namespace Tender.Pages
     /// </summary>
     public partial class TenderPage : Page
     {
+        TenderDBEntities db = new TenderDBEntities();
         public TenderPage()
         {
             InitializeComponent();
+            TenderList.ItemsSource = db.Tender.ToList();
         }
     }
 }

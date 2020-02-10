@@ -35,7 +35,7 @@ namespace Tender.Pages
         {
             errortext.Text = "";
 
-
+          
             if (textmail.Text.Length != 0)
             {
                 if (!Regex.IsMatch(textmail.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
@@ -65,6 +65,7 @@ namespace Tender.Pages
                     textINN.Focus();
                 }
             }
+         
 
             if (textlogin.Text.Length == 0)
             {
@@ -86,6 +87,14 @@ namespace Tender.Pages
                 errortext.Text = "Выберите роль!";
                 textrole.Focus();
             }
+            else if (textrole.Text == "Участник")
+            {
+                if (textINN.Text.Length == 0)
+                {
+                    errortext.Text = "Введите данные!";
+                    textINN.Focus();
+                }
+            }
             else
             {
                string lg = textlogin.Text;
@@ -100,6 +109,7 @@ namespace Tender.Pages
 
                 if (proverka > 0)
                 {
+                    errortext.Foreground = Brushes.Red;
                     errortext.Text = "Логин уже занят!";
                 }
                 else
