@@ -9,6 +9,58 @@
       Title="ReqPage">
 
     <Grid>
-        <TextBlock Text="Заявка" HorizontalAlignment="Center" />
+
+        <Border Margin="0 100 0 0" HorizontalAlignment="Center" BorderBrush="Black" Background="#e4e2e3"  Height="500" Width="500" BorderThickness="1"  CornerRadius="7">
+            <Grid>
+
+                <Border Height="40"  Margin="0,0,0,450" BorderThickness="0,0,0,1" BorderBrush="#3a3d44">
+                    <Grid>
+                        <TextBlock Text="Заявка" HorizontalAlignment="Center" Margin="182,11,156,5" Width="62" FontWeight="Bold" FontSize="18" />
+                    </Grid>
+                </Border>
+                <TextBlock Text="ИНН:" Height="20" Width="40" Margin="56,59,304,421"/>
+                <TextBox   FontSize="18" x:Name="textINN" Height="30" Width="300" Margin="49,73,49,395" Background="#e4e2e3">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBlock Text="Почта:" Height="20" Width="40" Margin="56,107,304,373"/>
+                <TextBox   FontSize="18" x:Name="textmail" Height="30" Width="300" Margin="49,122,49,346" Background="#e4e2e3">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBlock Text="Телефон:" Height="20" Width="50" Margin="55,158,295,322"/>
+                <TextBox   FontSize="18" x:Name="textphone" Height="30" Width="300" Margin="50,174,48,294" Background="#e4e2e3">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <Button   FontSize="18" Foreground="White" Content="подать заявку" x:Name="btnreq" Height="50" Width="200" Margin="99,438,99,10" Background="#FF0078D7" FontWeight="Bold" Click="Btnreq_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" x:Name="errortext" Text="" Foreground="Red" Margin="10,413,10,67" />
+                <TextBlock Text="Условия:" Height="20" Width="50" Margin="55,213,295,267"/>
+                <TextBox x:Name="Descriptionb" Height="170" Width="300" Background="#e4e2e3" 
+                         ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                 ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="49,229,49,99">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+        </Border>
     </Grid>
 </Page>

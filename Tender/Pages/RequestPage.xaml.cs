@@ -26,6 +26,7 @@ namespace Tender.Pages
         {
             InitializeComponent();
             RequestList.ItemsSource = db.Request.ToList();
+           
         }
     }
 }

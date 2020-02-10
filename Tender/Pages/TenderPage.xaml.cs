@@ -21,7 +21,7 @@ namespace Tender.Pages
     /// </summary>
     public partial class TenderPage : Page
     {
-        TenderDBEntities db = new TenderDBEntities();
+       public static TenderDBEntities db = new TenderDBEntities();
         public TenderPage()
         {
             InitializeComponent();

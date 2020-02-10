@@ -21,9 +21,43 @@ namespace Tender.Pages
     /// </summary>
     public partial class ReqPage : Page
     {
+        int tendid; // сохраняет id тендера
+
         public ReqPage(Tenders sel)
         {
             InitializeComponent();
+
+            if (sel != null)
+            {
+                tendid = sel.Id;
+                textINN.Text = AuthPage.AuthUser.INN;
+            }
+            this.DataContext = sel;
+        }
+
+        private void Btnreq_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                    Request Newrequest = new Request();
+                    Newrequest.INN = textINN.Text;
+                    Newrequest.Mail = textmail.Text;
+                    Newrequest.Phone = textphone.Text;
+                    Newrequest.Condition = Descriptionb.Text;
+                    Newrequest.ParticipantId = AuthPage.AuthUser.Id;
+                    Newrequest.TenderId = tendid;
+                    Newrequest.StatusId = 1;
+                    TenderPage.db.Request.Add(Newrequest);
+
+                TenderPage.db.SaveChanges();
+                MessageBox.Show("Успешно", "Сообщение", MessageBoxButton.OK);
+
+                textmail.Text = "";
+                textphone.Text = "";
+                Descriptionb.Text = "";
+
+            }
+            catch { MessageBox.Show("Не все данные введены", "Ошибка", MessageBoxButton.OK); }
         }
     }
 }

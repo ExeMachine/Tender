@@ -11,12 +11,14 @@
     <StackPanel>
         <ListView x:Name="RequestList" Background="#FFE4E2E3" Width="920" Height="630">
             <ListView.View>
-                <GridView >
+                <GridView>
+                    <GridViewColumn Header="Тендер"  DisplayMemberBinding="{Binding Path=Tenders.Name}" Width="150"/>
                     <GridViewColumn Header="ИНН"  DisplayMemberBinding="{Binding Path=INN}" Width="150"/>
                     <GridViewColumn  Header="Участник"  DisplayMemberBinding="{Binding Path=User.Name}" Width="150"/>
                     <GridViewColumn Header="Статус"  DisplayMemberBinding="{Binding Path=Status.Name}" Width="150"/>
                 </GridView>
             </ListView.View>
         </ListView>
+
     </StackPanel>
 </Page>
