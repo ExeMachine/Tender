@@ -75,6 +75,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Request_Tenders">
+    <End Role="Tenders" Type="Self.Tenders" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="TenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Request_User">
     <End Role="User" Type="Self.User" Multiplicity="1" />
     <End Role="Request" Type="Self.Request" Multiplicity="*" />
@@ -132,6 +144,10 @@
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Request_Status" Association="Self.FK_Request_Status">
       <End Role="Status" EntitySet="Status" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_Tenders" Association="Self.FK_Request_Tenders">
+      <End Role="Tenders" EntitySet="Tenders" />
       <End Role="Request" EntitySet="Request" />
     </AssociationSet>
     <AssociationSet Name="FK_Request_User" Association="Self.FK_Request_User">

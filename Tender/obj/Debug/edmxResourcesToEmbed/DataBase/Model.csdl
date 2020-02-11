@@ -14,6 +14,7 @@
     <Property Name="Condition" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Status" Relationship="Self.FK_Request_Status" FromRole="Request" ToRole="Status" />
     <NavigationProperty Name="User" Relationship="Self.FK_Request_User" FromRole="Request" ToRole="User" />
+    <NavigationProperty Name="Tenders" Relationship="TenderDBModel.FK_Request_Tenders" FromRole="Request" ToRole="Tenders" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -55,6 +56,7 @@
     <Property Name="DateOfEnd" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="User" Relationship="Self.FK_Tender_User" FromRole="Tenders" ToRole="User" />
     <NavigationProperty Name="User1" Relationship="Self.FK_Tender_User1" FromRole="Tenders" ToRole="User" />
+    <NavigationProperty Name="Request" Relationship="TenderDBModel.FK_Request_Tenders" FromRole="Tenders" ToRole="Request" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -160,5 +162,21 @@
       <End Role="User" EntitySet="User" />
       <End Role="Tenders" EntitySet="Tenders" />
     </AssociationSet>
+    <AssociationSet Name="FK_Request_Tenders" Association="TenderDBModel.FK_Request_Tenders">
+      <End Role="Tenders" EntitySet="Tenders" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_Request_Tenders">
+    <End Type="TenderDBModel.Tenders" Role="Tenders" Multiplicity="1" />
+    <End Type="TenderDBModel.Request" Role="Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="TenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

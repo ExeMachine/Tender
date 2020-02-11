@@ -25,5 +25,6 @@ namespace Tender.DataBase
     
         public virtual Status Status { get; set; }
         public virtual User User { get; set; }
+        public virtual Tenders Tenders { get; set; }
     }
 }

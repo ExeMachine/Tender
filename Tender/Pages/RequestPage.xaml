@@ -15,6 +15,7 @@
                     <GridViewColumn Header="Тендер"  DisplayMemberBinding="{Binding Path=Tenders.Name}" Width="150"/>
                     <GridViewColumn Header="ИНН"  DisplayMemberBinding="{Binding Path=INN}" Width="150"/>
                     <GridViewColumn  Header="Участник"  DisplayMemberBinding="{Binding Path=User.Name}" Width="150"/>
+                    <GridViewColumn  Header="Количество"  DisplayMemberBinding="{Binding Path=Tenders.Count}" Width="150"/>
                     <GridViewColumn Header="Статус"  DisplayMemberBinding="{Binding Path=Status.Name}" Width="150"/>
                 </GridView>
             </ListView.View>

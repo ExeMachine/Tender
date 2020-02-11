@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище TenderDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище TenderDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Request">
           <Key>
             <PropertyRef Name="Id" />
@@ -80,6 +80,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Request_Tenders">
+          <End Role="Tenders" Type="Self.Tenders" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tenders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="TenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Request_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Request" Type="Self.Request" Multiplicity="*" />
@@ -139,6 +151,10 @@
             <End Role="Status" EntitySet="Status" />
             <End Role="Request" EntitySet="Request" />
           </AssociationSet>
+          <AssociationSet Name="FK_Request_Tenders" Association="Self.FK_Request_Tenders">
+            <End Role="Tenders" EntitySet="Tenders" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
           <AssociationSet Name="FK_Request_User" Association="Self.FK_Request_User">
             <End Role="User" EntitySet="User" />
             <End Role="Request" EntitySet="Request" />
@@ -156,8 +172,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TenderDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -175,6 +190,7 @@
           <Property Name="Condition" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Status" Relationship="Self.FK_Request_Status" FromRole="Request" ToRole="Status" />
           <NavigationProperty Name="User" Relationship="Self.FK_Request_User" FromRole="Request" ToRole="User" />
+          <NavigationProperty Name="Tenders" Relationship="TenderDBModel.FK_Request_Tenders" FromRole="Request" ToRole="Tenders" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -216,6 +232,7 @@
           <Property Name="DateOfEnd" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="User" Relationship="Self.FK_Tender_User" FromRole="Tenders" ToRole="User" />
           <NavigationProperty Name="User1" Relationship="Self.FK_Tender_User1" FromRole="Tenders" ToRole="User" />
+          <NavigationProperty Name="Request" Relationship="TenderDBModel.FK_Request_Tenders" FromRole="Tenders" ToRole="Request" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -321,7 +338,23 @@
             <End Role="User" EntitySet="User" />
             <End Role="Tenders" EntitySet="Tenders" />
           </AssociationSet>
+          <AssociationSet Name="FK_Request_Tenders" Association="TenderDBModel.FK_Request_Tenders">
+            <End Role="Tenders" EntitySet="Tenders" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Request_Tenders">
+          <End Type="TenderDBModel.Tenders" Role="Tenders" Multiplicity="1" />
+          <End Type="TenderDBModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tenders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="TenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

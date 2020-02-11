@@ -16,6 +16,7 @@
         <AssociationConnector Association="TenderDBModel.FK_User_Role" ManuallyRouted="false" />
         <AssociationConnector Association="TenderDBModel.FK_Tender_User" ManuallyRouted="false" />
         <AssociationConnector Association="TenderDBModel.FK_Tender_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="TenderDBModel.FK_Request_Tenders" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
