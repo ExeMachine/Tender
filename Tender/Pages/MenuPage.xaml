@@ -28,13 +28,12 @@
                     <TextBlock FontSize="20" Text="Имя:" Height="30" Width="60" Margin="30,20,830,21" />
                     <TextBlock x:Name="nametx" Height="30" Width="350" FontSize="20" Text=""  Margin="82,20,778,21" />
                     <TextBlock FontSize="20" Text="Роль:" Height="30" Width="60" Margin="472,20,388,21" />
-                    <TextBlock x:Name="roletx" FontSize="20" Height="30" Width="200" Text=""  Margin="553,20,267,21" />
+                    <TextBlock x:Name="roletx" FontSize="20" Height="30" Text=""  Margin="553,20,137,21" />
                     <Button x:Name="closebtn"  FontSize="24" Foreground="White" Content="выйти" Height="40" Width="100"   Background="#FF3A3F45" FontWeight="Bold" BorderBrush="#FF3A3F45" BorderThickness="1" HorizontalAlignment="Right" Margin="0 0 10 0" Click="Closebtn_Click"/>
                 </Grid>
             </Border>
             <StackPanel Grid.Row="1" Background="#FFE4E2E3">
                 <Frame x:Name="Frame2" NavigationUIVisibility="Hidden"/>
-               
             </StackPanel>
         </Grid>
     </Grid>

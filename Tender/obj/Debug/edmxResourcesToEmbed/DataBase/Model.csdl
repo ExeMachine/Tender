@@ -57,6 +57,7 @@
     <NavigationProperty Name="User" Relationship="Self.FK_Tender_User" FromRole="Tenders" ToRole="User" />
     <NavigationProperty Name="User1" Relationship="Self.FK_Tender_User1" FromRole="Tenders" ToRole="User" />
     <NavigationProperty Name="Request" Relationship="TenderDBModel.FK_Request_Tenders" FromRole="Tenders" ToRole="Request" />
+    <Property Name="MaxCount" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="User">
     <Key>

@@ -49,6 +49,7 @@
     <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
     <Property Name="WinnerId" Type="int" />
     <Property Name="DateOfEnd" Type="date" Nullable="false" />
+    <Property Name="MaxCount" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="User">
     <Key>

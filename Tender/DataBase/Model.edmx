@@ -54,6 +54,7 @@
           <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="WinnerId" Type="int" />
           <Property Name="DateOfEnd" Type="date" Nullable="false" />
+          <Property Name="MaxCount" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -233,6 +234,7 @@
           <NavigationProperty Name="User" Relationship="Self.FK_Tender_User" FromRole="Tenders" ToRole="User" />
           <NavigationProperty Name="User1" Relationship="Self.FK_Tender_User1" FromRole="Tenders" ToRole="User" />
           <NavigationProperty Name="Request" Relationship="TenderDBModel.FK_Request_Tenders" FromRole="Tenders" ToRole="Request" />
+          <Property Name="MaxCount" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -405,6 +407,7 @@
           <EntitySetMapping Name="Tenders">
             <EntityTypeMapping TypeName="TenderDBModel.Tenders">
               <MappingFragment StoreEntitySet="Tenders">
+                <ScalarProperty Name="MaxCount" ColumnName="MaxCount" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OrganizerId" ColumnName="OrganizerId" />
                 <ScalarProperty Name="Price" ColumnName="Price" />

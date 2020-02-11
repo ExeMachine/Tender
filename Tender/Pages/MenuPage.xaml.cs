@@ -40,7 +40,9 @@ namespace Tender.Pages
 
         private void Applicationbtn_Click(object sender, RoutedEventArgs e)
         {
-            Frame2.Navigate(new RequestPage());
+            
+                Frame2.Navigate(new RequestPage());
+            
         }
     }
 }

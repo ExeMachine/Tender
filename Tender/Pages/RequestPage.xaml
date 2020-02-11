@@ -9,13 +9,15 @@
       Title="RequestPage">
 
     <StackPanel>
-        <ListView x:Name="RequestList" Background="#FFE4E2E3" Width="920" Height="630">
+        <TextBlock FontSize="18" Text="Чтобы пользоваться этой функцией, вы должны быть авторизованны как Организатор!" x:Name="errortext" Foreground="Red" Height="30" Margin="30,20,152,21" Visibility="Collapsed" />
+        <ListView x:Name="RequestList" Background="#FFE4E2E3" Width="920" Height="630" Visibility="Collapsed">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Тендер"  DisplayMemberBinding="{Binding Path=Tenders.Name}" Width="150"/>
                     <GridViewColumn Header="ИНН"  DisplayMemberBinding="{Binding Path=INN}" Width="150"/>
                     <GridViewColumn  Header="Участник"  DisplayMemberBinding="{Binding Path=User.Name}" Width="150"/>
                     <GridViewColumn  Header="Количество"  DisplayMemberBinding="{Binding Path=Tenders.Count}" Width="150"/>
+                    <GridViewColumn  Header="Макс.Количество"  DisplayMemberBinding="{Binding Path=Tenders.MaxCount}" Width="150"/>
                     <GridViewColumn Header="Статус"  DisplayMemberBinding="{Binding Path=Status.Name}" Width="150"/>
                 </GridView>
             </ListView.View>

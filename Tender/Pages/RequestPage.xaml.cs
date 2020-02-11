@@ -26,7 +26,16 @@ namespace Tender.Pages
         {
             InitializeComponent();
             RequestList.ItemsSource = db.Request.ToList();
-           
+
+            if (AuthPage.AuthUser.RoleId == 2)
+            {
+                errortext.Visibility = Visibility;
+            }
+            else
+            {
+                RequestList.Visibility = Visibility;
+            }
+
         }
     }
 }

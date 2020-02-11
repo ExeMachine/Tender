@@ -28,6 +28,7 @@ namespace Tender.DataBase
         public string Description { get; set; }
         public Nullable<int> WinnerId { get; set; }
         public System.DateTime DateOfEnd { get; set; }
+        public int MaxCount { get; set; }
     
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }
